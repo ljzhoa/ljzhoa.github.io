@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Jinzhao Lian — undergraduate researcher working on efficient and scalable foundation model systems."
+    />
+    <meta name="theme-color" content="#f7f7f5" />
+    <link rel="icon" type="image/svg+xml" href="./monogram.svg" />
+    <title>Jinzhao Lian | Homepage</title>
+    <script>
+      (() => {
+        if (window.location.protocol === 'file:' && window.location.pathname.toLowerCase().endsWith('/index.html')) {
+          window.location.replace(new URL('./homepage.html', window.location.href).href);
+          return;
+        }
+        const savedTheme = localStorage.getItem('theme');
+        const theme = savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
